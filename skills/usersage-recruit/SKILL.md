@@ -25,6 +25,7 @@ The server is `https://mcp.usersage.com/mcp`, configured by this plugin with an 
 ## Rules
 
 - **Always call `get_recruitment_options` first.** Never propose or launch a path without it.
+- **If the study has not been audited, offer `audit_study` before launching.** See the `usersage-draft` skill. It is free and read-only.
 - **Spending money or credits needs explicit confirmation.** State the cost (AI credits for AI Panel; the computed wallet cost for GenPop) and get a yes before calling `run_ai_panel` or `launch_genpop_recruitment`.
 - **If a balance is too low, say so plainly** and point at the top-up page from the tool response (`buyMoreUrl`) instead of attempting the call anyway.
 - **Never poll a running AI Panel run by re-calling `run_ai_panel`.** Check `get_study_findings`; status stays `running` until `complete` or `failed` (a failed run refunds credits automatically).

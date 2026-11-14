@@ -29,10 +29,10 @@ a Bearer token (`usg_live_...`), not OAuth. Any plan can create a key and connec
 the key can do depends on the plan:
 
 - **Free:** `plan_study`, `list_briefs`.
-- **Pro (and the 7-day trial):** all 20 tools. The rest are `create_study`,
+- **Pro (and the 7-day trial):** every other tool, including `create_study`,
   `duplicate_study`, `run_ai_panel`, `start_your_panel_recruitment`,
   `launch_genpop_recruitment`, `get_recruitment_options`, `list_studies`, `get_study`,
-  `get_study_findings`, `get_study_responses`, `list_projects`, `get_project`, `list_personas`,
+  `get_study_findings`, `get_study_responses`, `audit_study`, `list_projects`, `get_project`, `list_personas`,
   `get_persona`, `create_persona`, `list_panels`, `get_panel`, `create_panel`.
 
 A Free key calling a Pro tool gets a normal reply (not an error) saying the tool needs
@@ -90,12 +90,12 @@ checks to run afterwards are at the top of the file.
 
 ### What it does
 
-Five skills, one MCP server (`https://mcp.usersage.com/mcp`, 20 tools):
+Five skills, one MCP server (`https://mcp.usersage.com/mcp`, 20+ tools):
 
 | Skill | What it does |
 |---|---|
 | `usersage-plan` | Plan a study from a research question: `plan_study` writes a Study Brief (a recommended method, a drafted study, who to ask) and returns a link to open it in User Sage; `list_briefs` finds Briefs made earlier. Works on every plan. |
-| `usersage-draft` | Draft studies with `create_study`: surveys, tree tests, card sorts, five-second tests, preference tests, first-click tests, prototype (click task flow) tests. Variation copies with `duplicate_study`. |
+| `usersage-draft` | Draft studies with `create_study`: surveys, tree tests, card sorts, five-second tests, preference tests, first-click tests, prototype (click task flow) tests. Variation copies with `duplicate_study`. Check a study before launch with `audit_study`. |
 | `usersage-recruit` | Launch recruitment: Your Panel (own audience, free), AI Panel (synthetic personas, spends AI credits), GenPop Panel (real screened participants, spends wallet funds). |
 | `usersage-results` | Read back findings (`get_study_findings`), individual responses (`get_study_responses`), and study setups. |
 | `usersage-workspace` | Projects (`list_projects`, `get_project`), personas (`list_personas`, `get_persona`, `create_persona`) and AI panels of simulated people (`list_panels`, `get_panel`, `create_panel`). |
